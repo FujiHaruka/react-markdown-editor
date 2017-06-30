@@ -1,8 +1,9 @@
 {
   "name": "react-markdown-editor",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "React markdown editor",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -10,9 +11,25 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FujiHaruka/react-markdown-editor.git"
+  },
+  "keywords": [
+    "React",
+    "Markdown"
+  ],
+  "author": "FujiHaruka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FujiHaruka/react-markdown-editor/issues"
+  },
+  "homepage": "https://fujiharuka.github.io/react-markdown-editor"
 }
