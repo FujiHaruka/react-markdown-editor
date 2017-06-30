@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import autoBind from 'react-autobind'
+import marked from 'marked'
 import './App.css'
 
 class App extends Component {
@@ -8,14 +9,14 @@ class App extends Component {
     autoBind(this)
     this.state = {
       text: '',
-      lines: []
+      markedLines: []
     }
   }
 
   render () {
     let {
       text,
-      lines
+      markedLines
     } = this.state
     return (
       <div className='App'>
@@ -30,8 +31,12 @@ class App extends Component {
           />
           <div className='App-box App-textview'>
             {
-              lines.map((line, i) =>
-                <div className='App-line' key={i}>{line}</div>
+              markedLines.map((line, i) =>
+                <div
+                  key={i}
+                  className='App-line'
+                  dangerouslySetInnerHTML={line}
+                   />
               )
             }
           </div>
@@ -42,10 +47,12 @@ class App extends Component {
 
   onChangeText (e) {
     let text = e.target.value
-    let lines = text.split('\n')
+    let markedLines = text
+      .split('\n')
+      .map((line) => ({ __html: marked(line) }))
     this.setState({
-      text: e.target.value,
-      lines: lines
+      text,
+      markedLines
     })
   }
 }

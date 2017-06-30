@@ -1,3 +1,11 @@
+h1, h2, h3, h4, h5 {
+  font-weight: 100;
+}
+
+p, ul, ol {
+  margin: 4px 0;
+}
+
 .App {
   color: #222;
 }
@@ -35,9 +43,11 @@
 }
 
 .App-textview {
+  padding-top: 0;
+  padding-left: 16px;
 }
 
 .App-line {
-  height: 1.05em;
-  line-height: 1.05em;
+  height: 1em;
+  line-height: 1em;
 }

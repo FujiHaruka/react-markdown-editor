@@ -4,6 +4,7 @@
   "description": "React markdown editor",
   "dependencies": {
     "gh-pages": "^1.0.0",
+    "marked": "^0.3.6",
     "react": "^15.6.1",
     "react-autobind": "^1.0.6",
     "react-dom": "^15.6.1"
